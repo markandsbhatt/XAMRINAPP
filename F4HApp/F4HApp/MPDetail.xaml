@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="F4HApp.MPDetail"
+             Title="FOOD4HEALTH">
+    <ContentPage.Content>
+        <StackLayout Margin="30,30,30,30" HorizontalOptions="FillAndExpand">
+
+            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" >
+                <Label x:Name="lblMemberName" Text="Welcome Karen Smith" TextColor="#42a79f" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Large"></Label>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand"  Margin="0,10,0,0">
+                <Label Text="Total Points Earned : "  HorizontalOptions="Center" FontAttributes="Bold" FontSize="Small"></Label>
+                <Label x:Name="lblEarnedPoints" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Small"></Label>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand"  Margin="0,5,0,0">
+                <Label Text="Total Points Redeemed : "  HorizontalOptions="Center" FontAttributes="Bold" FontSize="Small"></Label>
+                <Label x:Name="lblRedeemPoints"  HorizontalOptions="Center" FontAttributes="Bold" FontSize="Small"></Label>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand"  Margin="0,5,0,0">
+                <Label Text="Total Points Transferred : "  HorizontalOptions="Center" FontAttributes="Bold" FontSize="Small"></Label>
+                <Label x:Name="lblTransferedPoints"  HorizontalOptions="Center" FontAttributes="Bold" FontSize="Small"></Label>
+            </StackLayout>
+            
+            <StackLayout Orientation="Vertical" Spacing="10" HorizontalOptions="FillAndExpand" >
+
+                <Button x:Name="btnTransferPoints" Text="Transfer Existing Points" BackgroundColor="#9e1b69" TextColor="White"
+                    HorizontalOptions="FillAndExpand"  Margin="0,10,0,0"   Clicked="OnbtnTransferPoints" />
+
+                <Button x:Name="btnScanScratchCard" Text="Enter Scratch Code" BackgroundColor="#42a79f" TextColor="White"
+                    HorizontalOptions="FillAndExpand"  Margin="0,10,0,0"  Clicked="OnbtnScanScratchCard" />
+
+                <Button x:Name="btnRedeemPoints" Text="Redeem Points" BackgroundColor="#9e1b69" TextColor="White"
+                    HorizontalOptions="FillAndExpand"  Margin="0,10,0,0"  Clicked="OnbtnRedeemPoints" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Spacing="10" HorizontalOptions="FillAndExpand" Margin="0,20,0,0">
+
+                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" >
+
+                    <Label Text="Sending Scratch Code by SMS Or USSD" TextColor="#9e1b69" FontAttributes="Bold" FontSize="Small" HorizontalOptions="StartAndExpand"></Label>
+
+                    <Label Text="1. SMS yourscratchcode to 20370" TextColor="#9e1b69" FontAttributes="Bold" FontSize="Small" HorizontalOptions="StartAndExpand"></Label>
+
+                    <Label Text="2. USSD - Dial *636*103# " TextColor="#9e1b69" FontAttributes="Bold" FontSize="Small" HorizontalOptions="StartAndExpand"></Label>
+
+                </StackLayout>
+
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="F4HApp.views.TransferPoints" Title="Transfer"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout HorizontalOptions="FillAndExpand">
+            <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="50" BackgroundColor="#9e1b69">
+                    <Label x:Name="lblMemberName" Text="Karen Smith" TextColor="#ffffff" HorizontalOptions="Center" FontAttributes="Bold" Margin="0,8,0,0" FontSize="Large"></Label>
+            </StackLayout>
+
+            <StackLayout Margin="10,10,10,10" HorizontalOptions="FillAndExpand">
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                    <Label Text="Total Available Points : "  TextColor="#9e1b69"  FontAttributes="Bold" FontSize="Small"></Label>
+                    <Label  x:Name="lblAvailPoints"  TextColor="#9e1b69" FontAttributes="Bold" FontSize="Small"></Label>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"  Margin="0,5,0,0">
+                    <Label Text="Select members for transfer:"  TextColor="#9e1b69" 
+                        FontSize="Small"></Label>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"  Margin="0,5,0,0">                    
+                    <Entry x:Name="txtPoints" Text="{Binding Points}" Placeholder="Points To Transfer" Keyboard="Numeric"
+                       HorizontalOptions="FillAndExpand" />
+
+                    <Button x:Name="btnTransfer" Text="Transfer" BackgroundColor="#42a79f" TextColor="White"
+                        HorizontalOptions="FillAndExpand" Clicked="btnTransfer_Clicked" />
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"  Margin="0,5,0,0">
+                    <Label Text="Family:"  TextColor="#9e1b69" FontSize="Small"></Label>
+                </StackLayout>
+                
+                <StackLayout HorizontalOptions="FillAndExpand" Margin="5,0,10,10" x:Name="Family">
+
+                    <BoxView BackgroundColor="#9e1b69" HeightRequest="1" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" />
+
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <StackLayout WidthRequest="150" Orientation="Vertical" Grid.Row="1" Grid.Column="0" Margin="0,0,0,0">
+                            <Label  Text="Name" TextColor="#42a79f" />
+                        </StackLayout>
+                        <StackLayout WidthRequest="100" Orientation="Vertical" Grid.Row="1" Grid.Column="1" Margin="0,0,0,0">
+                                <Label  Text="Is Member" TextColor="#42a79f" HorizontalOptions="Center" />
+                        </StackLayout>
+                        <StackLayout WidthRequest="100" Orientation="Vertical" Grid.Row="1" Grid.Column="2" Margin="0,0,0,0">
+                                <Label  Text="Select" TextColor="#42a79f" HorizontalOptions="Center" />
+                            </StackLayout>                       
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
+                        <BoxView BackgroundColor="#9e1b69" HeightRequest="1" />
+                    </StackLayout>
+
+                    <StackLayout x:Name="FamilyMsg" HorizontalOptions="CenterAndExpand" Orientation="Vertical" IsVisible="False">
+                        <Label Text="Currently None"  TextColor="#9e1b69" 
+                            FontSize="Micro" HorizontalOptions="CenterAndExpand"></Label>
+
+                        <Label x:Name="lblAddFamily" Text="Start Adding Now"  TextColor="#9e1b69" 
+                            FontSize="Micro" HorizontalOptions="CenterAndExpand"></Label>
+                    </StackLayout>
+
+                    <ListView x:Name="LVFamily" HasUnevenRows="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="150*" />
+                                            <ColumnDefinition Width="100*" />
+                                            <ColumnDefinition Width="100*" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <StackLayout Orientation="Vertical"  Grid.Column="0" Margin="0,5,0,0">
+                                            <Label  Text="{Binding Name}" />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" Grid.Column="1" Margin="0,5,0,0">
+                                            <Label  Text="{Binding IsMember}" HorizontalOptions="Center" />
+                                        </StackLayout>
+                                         <StackLayout Orientation="Vertical"  Grid.Column="2" Margin="0,5,0,0">
+                                                
+                                                <Button Image="unchecked_checkbox26x26.png" CommandParameter="{Binding FFMemberID}" Clicked="SelectClicked"
+                                                      BackgroundColor="White" BorderWidth="0" BorderColor="White"  
+                                                      IsVisible="{Binding F4HMember}" Margin="0,0,0,0"></Button>
+                                               
+                                         </StackLayout>
+
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                </StackLayout>
+
+
+                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"  Margin="0,5,0,0">
+                    <Label Text="Friends:"  TextColor="#9e1b69" FontSize="Small"></Label>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="FillAndExpand" Margin="5,0,10,10" x:Name="Friend">
+
+                    <BoxView BackgroundColor="#9e1b69" HeightRequest="1" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" />
+
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <StackLayout WidthRequest="150" Orientation="Vertical" Grid.Row="1" Grid.Column="0" Margin="0,0,0,0">
+                            <Label  Text="Name" TextColor="#42a79f" />
+                        </StackLayout>
+                        <StackLayout WidthRequest="100" Orientation="Vertical" Grid.Row="1" Grid.Column="1" Margin="0,0,0,0">
+                                <Label  Text="Is Member" TextColor="#42a79f" HorizontalOptions="Center" />
+                        </StackLayout>
+                        <StackLayout WidthRequest="100" Orientation="Vertical" Grid.Row="1" Grid.Column="2" Margin="0,0,0,0">
+                                <Label  Text="Select" TextColor="#42a79f" HorizontalOptions="Center" />
+                            </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
+                        <BoxView BackgroundColor="#9e1b69" HeightRequest="1" />
+                    </StackLayout>
+
+                    <StackLayout x:Name="FriendMsg" HorizontalOptions="CenterAndExpand" Orientation="Vertical">
+                        <Label Text="Currently None"  TextColor="#9e1b69" 
+                            FontSize="Micro" HorizontalOptions="CenterAndExpand"></Label>
+
+                            <Label x:Name="lblAddFriend" Text="Start Adding Now"  TextColor="#9e1b69" HorizontalOptions="CenterAndExpand"
+                                FontSize="Micro"></Label>
+                    </StackLayout>
+
+                    <ListView x:Name="LVFriend"  HasUnevenRows="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                 <ViewCell>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="150*" />
+                                            <ColumnDefinition Width="100*" />
+                                            <ColumnDefinition Width="100*" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <StackLayout Orientation="Vertical"  Grid.Column="0" Margin="0,5,0,0">
+                                            <Label  Text="{Binding Name}" />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" Grid.Column="1" Margin="0,5,0,0">
+                                                <Label  Text="{Binding IsMember}" HorizontalOptions="Center" />
+                                        </StackLayout>
+                                            <StackLayout Orientation="Vertical"  Grid.Column="2" Margin="0,5,0,0">
+
+                                                <Button Image="unchecked_checkbox26x26.png" CommandParameter="{Binding FFMemberID}" Clicked="SelectClicked"
+                                                      BackgroundColor="White" BorderWidth="0" BorderColor="White" 
+                                                      IsVisible="{Binding F4HMember}" Margin="0,0,0,0"></Button>
+
+                                            </StackLayout>
+
+                                        </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                </StackLayout>
+                
+            </StackLayout>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

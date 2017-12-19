@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="F4HApp.views.BarcodePopupPage" Title="SCAN YOUR CODE">
+  <ContentPage.Content>
+    <Button
+          Text="Scan your Code When scanning, please adjust the red line on top of the code. "
+        BackgroundColor="White"
+        TextColor="Black"
+         Clicked="OnClickScan" />
+  </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="F4HApp.views.TestContact">
+
+  <StackLayout Margin="30,10,30,30" HorizontalOptions="FillAndExpand">
+    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" >
+      <Image Source="F4HLogo.png"></Image>
+    </StackLayout>
+    <Entry x:Name="txtExistingPassword"  Placeholder="Existing Password *" Keyboard="Default"
+                         HorizontalOptions="FillAndExpand" Margin="0,5,0,0" IsPassword="False" />
+    <Button x:Name="btnRegister" Text="Submit" BackgroundColor="#9e1b69" TextColor="White"
+                        HorizontalOptions="FillAndExpand"  Margin="0,1,0,0"  Clicked="OnClickShare" />
+
+	<Button Grid.Row="0" Text="fetchcontacts" Command="{Binding FetchContactCommand}" VerticalOptions="Center" HorizontalOptions="Center" />
+<ListView Grid.Row="1" ItemsSource="{Binding ContactList}">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<Label Text="{Binding Contact_FirstName}"/>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+  </StackLayout>
+</ContentPage>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="F4HApp.views.CustomerSupport" Title="Customer Support">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand">
+            
+            <StackLayout Margin="10,20,10,10" HorizontalOptions="FillAndExpand">
+
+                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+
+                    
+                    <Label Text="Our Corporate Office Address :" TextColor="#9e1b69" FontAttributes="Bold" FontSize="Small" HorizontalOptions="FillAndExpand"></Label>
+
+                    <Label FontAttributes="Bold" FontSize="Small" HorizontalOptions="FillAndExpand">
+                        <Label.Text>
+FOOD4HEALTH
+Suite No. 5, Ramco Mayfair,
+Next to Southern Sun Msapo Close,
+OffParkland Road,
+Nairobi, Kenya 76171-00508
+                        </Label.Text>
+                    </Label>
+
+                    <Label Text="24x7 Helpline No. : +254 20 257 3361" TextColor="#9e1b69" FontAttributes="Bold" FontSize="Small" HorizontalOptions="FillAndExpand"></Label>
+
+                    <Label Text="Contact Email Address : support@food4health.com" TextColor="#9e1b69" FontAttributes="Bold" FontSize="Small" HorizontalOptions="FillAndExpand"></Label>
+
+                    <Label Text="Write To Us" TextColor="#42a79f" FontAttributes="Bold" FontSize="Small" 
+                           HorizontalOptions="FillAndExpand"  Margin="0,10,0,0"></Label>
+
+                    <Entry x:Name="txtQuery" Text="" VerticalOptions="FillAndExpand" Keyboard="Chat" HeightRequest="100"  Margin="0,10,0,0" BackgroundColor="#dadada"  />
+                    
+                    <Button x:Name="ButtonSubmit" Text="Send" BackgroundColor="#9e1b69" TextColor="White"
+                            HorizontalOptions="FillAndExpand"  Margin="0,10,0,0"  Clicked="OnButtonSubmit" />
+                    
+                </StackLayout>
+
+            </StackLayout>            
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

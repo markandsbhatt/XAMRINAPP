@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="F4HApp.views.UserProfile" Title="Profile">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand">
+            
+            <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="50" BackgroundColor="#9e1b69">
+                <Label x:Name="lblMemberName"  TextColor="#ffffff" HorizontalOptions="Center" FontAttributes="Bold" Margin="0,8,0,0" FontSize="Large"></Label>
+            </StackLayout>
+
+            <StackLayout Margin="10,20,10,10" HorizontalOptions="FillAndExpand">
+
+                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+
+                    <Label x:Name="lblMobileNo" Text="" TextColor="#9e1b69" FontAttributes="Bold" FontSize="Small" HorizontalOptions="FillAndExpand"></Label>
+
+                    <Label x:Name="lblEmailAddress" Text="" TextColor="#9e1b69" FontAttributes="Bold" FontSize="Small" HorizontalOptions="FillAndExpand"></Label>
+
+                    <Label Text="My Address :" TextColor="#9e1b69" FontAttributes="Bold" FontSize="Small" HorizontalOptions="FillAndExpand"></Label>
+
+                    <Label  x:Name="lblAddress" FontAttributes="Bold" FontSize="Small" HorizontalOptions="FillAndExpand">                        
+                    </Label>
+                </StackLayout>
+
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Spacing="10" HorizontalOptions="FillAndExpand" >
+
+                <Button x:Name="btnChangeAddress" Text="Change Contact Address" BackgroundColor="#9e1b69" TextColor="White"
+                    HorizontalOptions="FillAndExpand"  Margin="0,10,0,0" Clicked="OnbtnChangeAddress" />
+
+                <Button x:Name="btnChangePassword" Text="Change Password" BackgroundColor="#42a79f" TextColor="White"
+                    HorizontalOptions="FillAndExpand"  Margin="0,10,0,0" Clicked="OnbtnChangePassword" />
+
+            </StackLayout>
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

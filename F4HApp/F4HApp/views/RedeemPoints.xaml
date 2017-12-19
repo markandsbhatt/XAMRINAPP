@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="F4HApp.views.RedeemPoints" Title="Redeem">
+  <ContentPage.Content>
+    <StackLayout HorizontalOptions="FillAndExpand">
+      <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="50" BackgroundColor="#9e1b69">
+        <Label x:Name="lblMemberName" TextColor="#ffffff" HorizontalOptions="Center" FontAttributes="Bold" Margin="0,8,0,0" FontSize="Large"></Label>
+      </StackLayout>
+
+      <StackLayout Margin="10,20,10,10" HorizontalOptions="FillAndExpand">
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand"  Margin="0,10,0,0">
+          <Label Text="Total Available Points : "  TextColor="#9e1b69"  FontAttributes="Bold" FontSize="Small"></Label>
+          <Label x:Name="lblAvailPoints" TextColor="#9e1b69" FontAttributes="Bold" FontSize="Small"></Label>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand"  Margin="0,0,0,0">
+         <Label x:Name="lblPlans" Text=" Health Plans" TextColor="#2c9e94" FontAttributes="Bold" FontSize="Small" HorizontalOptions="StartAndExpand"></Label>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand"  Margin="0,0,0,0">
+          <Label Text="Select from the below coverage plans to redeem."  TextColor="#42a79f"  FontAttributes="Bold" FontSize="Small"></Label>
+        </StackLayout>
+
+        <StackLayout HorizontalOptions="FillAndExpand" Margin="5,0,10,10" x:Name="Family">
+
+          <BoxView BackgroundColor="#9e1b69" HeightRequest="1" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" />
+
+          <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+            <StackLayout WidthRequest="150" Orientation="Vertical" Grid.Row="1" Grid.Column="0" Margin="0,0,0,0">
+              <Label  Text="Coverage Plan" TextColor="#42a79f" />
+            </StackLayout>
+            <StackLayout WidthRequest="100" Orientation="Vertical" HorizontalOptions="Center" Grid.Row="1" Grid.Column="1" Margin="0,0,0,0">
+              <Label  Text="Points to Redeem" TextColor="#42a79f" HorizontalOptions="Center" />
+            </StackLayout>
+            <StackLayout WidthRequest="100" Orientation="Vertical"  HorizontalOptions="Center"
+                         Grid.Row="1" Grid.Column="2" Margin="0,0,0,0">
+            </StackLayout>
+          </StackLayout>
+
+          <StackLayout Orientation="Vertical" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
+            <BoxView BackgroundColor="#9e1b69" HeightRequest="1" />
+          </StackLayout>
+
+          <StackLayout x:Name="SchemeMsg" HorizontalOptions="CenterAndExpand" Orientation="Vertical" IsVisible="False">
+            <Label Text="At present there is no scheme available"  TextColor="#9e1b69"
+                FontSize="Micro" HorizontalOptions="CenterAndExpand"></Label>
+          </StackLayout>
+
+          <ListView x:Name="LVRedeem" HasUnevenRows="True" ItemTapped="Math_Clicked">
+            <ListView.ItemTemplate>
+              <DataTemplate>
+                <ViewCell>
+                  <Grid>
+                    <Grid.RowDefinitions>
+                      <RowDefinition Height="Auto" />
+                      <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="150*" />
+                      <ColumnDefinition Width="100*" />
+                      <ColumnDefinition Width="100*" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout Orientation="Vertical"  Grid.Column="0" Margin="0,5,0,0">
+                      <Label  Text="{Binding SchemeDetail}" >
+                        <!--<Label.GestureRecognizers>
+                                              <TapGestureRecognizer Tapped="Math_Clicked"/>
+                                            </Label.GestureRecognizers>-->
+                      </Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Grid.Column="1" Margin="0,5,0,0" HorizontalOptions="Center">
+                      <Label  Text="{Binding RedeemPoints}" HorizontalOptions="Center" />
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical"  Grid.Column="2" Margin="0,5,0,0">
+
+                      <Button Text="Redeem" BackgroundColor="White" BorderWidth="0"  CommandParameter="{Binding EPointID}"
+                              BorderColor="Red"  Margin="0,0,0,0"  Clicked="SelectClicked"></Button>
+
+                    </StackLayout>
+
+                  </Grid>
+                </ViewCell>
+              </DataTemplate>
+            </ListView.ItemTemplate>
+          </ListView>
+
+        </StackLayout>
+      </StackLayout>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

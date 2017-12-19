@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="F4HApp.views.ManageFF" Title="Family - Friends">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout Margin="10,10,10,10" HorizontalOptions="FillAndExpand">
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+
+                <Entry x:Name="txtFName"  Placeholder="First Name" Keyboard="Default"
+                       HorizontalOptions="FillAndExpand" Margin="0,5,0,0" />
+
+                <Entry x:Name="txtLName"  Placeholder="Last Name" Keyboard="Default"
+                       HorizontalOptions="FillAndExpand" Margin="0,5,0,0" />
+                
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                
+                <Entry x:Name="txtMobileNo"  Placeholder="Mobile No" Keyboard="Default"
+                       HorizontalOptions="FillAndExpand" Margin="0,5,0,0" WidthRequest="150" />
+
+                <Picker Title="Category" x:Name="ddlCategory" VerticalOptions="CenterAndExpand" TextColor="Black"  WidthRequest="150"  Margin="0,5,0,0">
+                    <Picker.Items>
+                        <x:String>Family</x:String>
+                        <x:String>Friends</x:String>
+                    </Picker.Items>
+                </Picker>
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Button x:Name="btnAdd" Text="Add To List" BackgroundColor="#9e1b69" TextColor="White"
+                    HorizontalOptions="FillAndExpand"  Margin="0,5,0,0"  Clicked="OnbtnAdd" />
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="FillAndExpand">
+
+                <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Vertical">
+                    <Label  Text="Family"  TextColor="#9e1b69" FontSize="Small"></Label>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Vertical" x:Name="FamilyMsg">
+                        <Label  Text="Currently None"  TextColor="#9e1b69" FontSize="Small" IsVisible="False"></Label>
+                </StackLayout>
+                
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="FillAndExpand"  x:Name="Family" IsVisible="False">
+                
+                <BoxView BackgroundColor="#9e1b69" HeightRequest="1" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" />
+
+                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                    <StackLayout WidthRequest="140" Orientation="Vertical" Grid.Row="1" Grid.Column="0" Margin="0,0,0,0">
+                        <Label  Text="Name" TextColor="#42a79f" FontSize="Small"  />
+                    </StackLayout>                    
+                    <StackLayout WidthRequest="100" Orientation="Vertical" Grid.Row="1" Grid.Column="2" Margin="0,0,0,0">
+                        <Label  Text="Is Member" TextColor="#42a79f" FontSize="Small"  />
+                    </StackLayout>
+                    <StackLayout WidthRequest="100" Orientation="Vertical" Grid.Row="1" Grid.Column="3" Margin="0,0,0,0">
+                        
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
+                    <BoxView BackgroundColor="#9e1b69" HeightRequest="1" />
+                </StackLayout>
+
+                <ListView x:Name="LVFamily">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="140*" />
+                                        <ColumnDefinition Width="100*" />
+                                        <ColumnDefinition Width="100*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <StackLayout Orientation="Vertical"  Grid.Column="0">
+                                        <Label  Text="{Binding Name}" FontSize="Small" />
+                                            <Label  Text="{Binding MobileNo}" FontSize="Small" />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical"  Grid.Column="1">
+                                        <Label  Text="{Binding IsMember}" TextColor="#42a79f" FontSize="Small"  />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical"  Grid.Column="2">
+                                            <Button Text="Invite" Margin="0,0,0,0" FontSize="Micro" FontFamily="Arial" IsVisible="{Binding ButtonShowHide}"></Button>
+                                    </StackLayout>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="FillAndExpand" Margin="0,20,0,0">
+
+                <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Vertical">
+                    <Label  Text="Friends"  TextColor="#9e1b69" FontSize="Small"></Label>
+                </StackLayout>
+                
+                <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Vertical" x:Name="FriendMsg" IsVisible="False">
+                    <Label  Text="Currently None"  TextColor="#9e1b69" FontSize="Small"></Label>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="FillAndExpand" x:Name="Friend" IsVisible="False">
+
+                <BoxView BackgroundColor="#9e1b69" HeightRequest="1" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" />
+
+                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                    <StackLayout WidthRequest="140" Orientation="Vertical" Grid.Row="1" Grid.Column="0" Margin="0,0,0,0">
+                        <Label  Text="Name" TextColor="#42a79f" FontSize="Small"  />
+                    </StackLayout>
+                    <StackLayout WidthRequest="100" Orientation="Vertical" Grid.Row="1" Grid.Column="2" Margin="0,0,0,0">
+                        <Label  Text="Is Member" TextColor="#42a79f" FontSize="Small"  />
+                    </StackLayout>
+                    <StackLayout WidthRequest="100" Orientation="Vertical" Grid.Row="1" Grid.Column="3" Margin="0,0,0,0">
+
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
+                    <BoxView BackgroundColor="#9e1b69" HeightRequest="1" />
+                </StackLayout>
+
+
+
+                <ListView x:Name="LVFriend">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="140*" />
+                                        <ColumnDefinition Width="100*" />                                        
+                                        <ColumnDefinition Width="100*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <StackLayout Orientation="Vertical"  Grid.Column="0">
+                                        <Label  Text="{Binding Name}" FontSize="Small" />
+                                        <Label  Text="{Binding MobileNo}" FontSize="Small" />
+                                    </StackLayout>                                    
+                                    <StackLayout Orientation="Vertical"  Grid.Column="1">
+                                        <Label  Text="{Binding IsMember}" TextColor="#42a79f" FontSize="Small"  />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical"  Grid.Column="2">
+                                            <Button Text="Invite" Margin="0,0,0,0" FontSize="Micro"  FontFamily="Arial" IsVisible="{Binding ButtonShowHide}"></Button>
+                                    </StackLayout>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackLayout>
+
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

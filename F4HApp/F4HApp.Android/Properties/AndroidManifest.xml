@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="Food4Health.Food4Health" android:versionCode="1" android:versionName="1.0">
+	<uses-sdk android:minSdkVersion="17" android:targetSdkVersion="23" />
+	<uses-permission android:name="android.permission.READ_CONTACTS" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<application android:label="Food4Health" android:icon="@drawable/icon"></application>
+</manifest>

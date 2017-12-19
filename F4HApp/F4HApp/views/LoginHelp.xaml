@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="F4HApp.views.LoginHelp">
+    <ContentPage.Content>
+        <StackLayout Margin="30,100,30,30" HorizontalOptions="FillAndExpand">
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" >
+                <Image Source="F4HLogo.png"></Image>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" >
+                <Label Text="Forgot Password" TextColor="#9e1b69" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Large"></Label>
+            </StackLayout>
+            
+            
+            
+            <StackLayout x:Name="StackMobileNo" Orientation="Vertical" Spacing="10" HorizontalOptions="FillAndExpand" >
+
+                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" >
+                    <Label Text="To retrieve your password please enter"  HorizontalOptions="Center" FontAttributes="Bold" FontSize="Small"></Label>
+                    <Label Text="your mobile no."  HorizontalOptions="Center" FontAttributes="Bold" FontSize="Small"></Label>
+                </StackLayout>
+                
+                <Entry x:Name="txtMobileNo" Placeholder="Mobile No" Keyboard="Numeric"
+                       HorizontalOptions="FillAndExpand" Margin="0,10,0,0" />
+
+                <Button x:Name="btnSendCode" Text="Submit" BackgroundColor="#9e1b69" TextColor="White"
+                    HorizontalOptions="FillAndExpand"  Margin="0,10,0,0"  Clicked="OnbtnSendCode" />
+
+            </StackLayout>
+
+            <StackLayout x:Name="StackOTP" Orientation="Vertical" Spacing="10" HorizontalOptions="FillAndExpand" IsVisible="False">
+
+                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" >
+                    <Label Text="Enter OTP received on sms"  HorizontalOptions="Center" FontAttributes="Bold" FontSize="Small"></Label>
+                </StackLayout>
+
+                <Entry x:Name="txtOTP" Placeholder="OTP" Keyboard="Numeric"
+                       HorizontalOptions="FillAndExpand" Margin="0,10,0,0" />
+
+                <Button x:Name="btnCheckOTP" Text="Submit" BackgroundColor="#9e1b69" TextColor="White"
+                    HorizontalOptions="FillAndExpand"  Margin="0,10,0,0"  Clicked="OnbtnCheckOTP" />
+
+            </StackLayout>
+
+            <StackLayout x:Name="StackReset" Orientation="Vertical" Spacing="10" HorizontalOptions="FillAndExpand" IsVisible="False">
+
+                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" >
+                    <Label Text="Enter your new password to reset"  HorizontalOptions="Center" FontAttributes="Bold" FontSize="Small"></Label>
+                </StackLayout>
+
+                <Entry x:Name="txtResetPassword" Placeholder="New Password" Keyboard="Default"
+                       HorizontalOptions="FillAndExpand" Margin="0,10,0,0" IsPassword="True" />
+
+                <Button x:Name="btnResetPassword" Text="Submit" BackgroundColor="#9e1b69" TextColor="White"
+                    HorizontalOptions="FillAndExpand"  Margin="0,10,0,0"  Clicked="OnbtnResetPassword" />
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Spacing="10" HorizontalOptions="FillAndExpand">
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
+
+                    <Label x:Name="lblBackToLogin" Text="Back To Login" TextColor="#9e1b69" FontAttributes="Bold" 
+                           FontSize="Small" HorizontalOptions="EndAndExpand"></Label>
+
+                </StackLayout>
+
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

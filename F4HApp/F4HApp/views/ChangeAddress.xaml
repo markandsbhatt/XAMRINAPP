@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="F4HApp.views.ChangeAddress" Title="Change Address">
+    <ContentPage.Content>
+        <StackLayout Margin="15,30,30,30" HorizontalOptions="FillAndExpand">
+
+            <StackLayout Orientation="Vertical" Spacing="10" HorizontalOptions="FillAndExpand" >
+
+                <Entry x:Name="txtAddress1" Placeholder="Address Line 1 *" Keyboard="Default"
+                       HorizontalOptions="FillAndExpand" Margin="0,1,0,0" />
+
+                <Entry x:Name="txtAddress2" Placeholder="Address Line 2" Keyboard="Default"
+                       HorizontalOptions="FillAndExpand" Margin="0,1,0,0" />
+
+                <Entry x:Name="txtCityTown"  Placeholder="City *" Keyboard="Default"
+                       HorizontalOptions="FillAndExpand" Margin="0,1,0,0" />
+
+                <Entry x:Name="txtStateArea"  Placeholder="County" Keyboard="Default"
+                       HorizontalOptions="FillAndExpand" Margin="0,1,0,0" />
+                
+                <Entry x:Name="txtPostcode" Text="{Binding Email}" Placeholder="Postcode" Keyboard="Default"
+                       HorizontalOptions="FillAndExpand" Margin="0,1,0,0" />
+
+                <Picker Title="Country" x:Name="ddlCountry" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Margin="0,1,0,0">
+                    <Picker.Items>
+                        <x:String>AFGHANISTAN</x:String>
+                        <x:String>ALBANIA</x:String>
+                        <x:String>ALGERIA</x:String>
+                        <x:String>AMERICAN SAMOA</x:String>
+                        <x:String>ANDORRA</x:String>
+                        <x:String>ANGOLA</x:String>
+                        <x:String>ANGUILLA</x:String>
+                        <x:String>ANTARCTICA</x:String>
+                        <x:String>ANTIGUA AND   BARBUDA</x:String>
+                        <x:String>ARGENTINA</x:String>
+                        <x:String>ARMENIA</x:String>
+                        <x:String>ARUBA</x:String>
+                        <x:String>AUSTRALIA</x:String>
+                        <x:String>AUSTRIA</x:String>
+                        <x:String>AZERBAIJAN</x:String>
+                        <x:String>BAHAMAS</x:String>
+                        <x:String>BAHRAIN</x:String>
+                        <x:String>BANGLADESH</x:String>
+                        <x:String>BARBADOS</x:String>
+                        <x:String>BELARUS</x:String>
+                        <x:String>BELGIUM</x:String>
+                        <x:String>BELIZE</x:String>
+                        <x:String>BENIN</x:String>
+                        <x:String>BERMUDA</x:String>
+                        <x:String>BHUTAN</x:String>
+                        <x:String>BOLIVIA</x:String>
+                        <x:String>BOSNIA HERCEGOVINA</x:String>
+                        <x:String>BOTSWANA</x:String>
+                        <x:String>BOUVET   ISLAND</x:String>
+                        <x:String>BRAZIL</x:String>
+                        <x:String>BRITISH INDIAN OCEAN   TERRITORY</x:String>
+                        <x:String>BRUNEI DARUSSALAM</x:String>
+                        <x:String>BULGARIA</x:String>
+                        <x:String>BURKINA FASO</x:String>
+                        <x:String>BURUNDI</x:String>
+                        <x:String>CAMBODIA</x:String>
+                        <x:String>CAMEROON</x:String>
+                        <x:String>CANADA</x:String>
+                        <x:String>CAPE VERDE</x:String>
+                        <x:String>CAYMAN ISLANDS</x:String>
+                        <x:String>CENTRAL AFRICAN REPUBLIC</x:String>
+                        <x:String>CHAD</x:String>
+                        <x:String>CHILE</x:String>
+                        <x:String>CHINA</x:String>
+                        <x:String>CHRISTMAS ISLAND</x:String>
+                        <x:String>COCOS</x:String>
+                        <x:String>COLOMBIA</x:String>
+                        <x:String>COMOROS</x:String>
+                        <x:String>CONGO</x:String>
+                        <x:String>COOK ISLANDS</x:String>
+                        <x:String>COSTA RICA</x:String>
+                        <x:String>COTE DIVOIRE</x:String>
+                        <x:String>CROATIA</x:String>
+                        <x:String>CUBA</x:String>
+                        <x:String>CYPRUS</x:String>
+                        <x:String>CZECH REPUBLIC</x:String>
+                        <x:String>CZECHOSLOVAKIA</x:String>
+                        <x:String>DENMARK</x:String>
+                        <x:String>DJIBOUTI</x:String>
+                        <x:String>DOMINICA</x:String>
+                        <x:String>DOMINICAN REPUBLIC</x:String>
+                        <x:String>EAST   TIMOR</x:String>
+                        <x:String>ECUADOR</x:String>
+                        <x:String>EGYPT</x:String>
+                        <x:String>EL   SALVADOR</x:String>
+                        <x:String>EQUATORIAL GUINEA</x:String>
+                        <x:String>ESTONIA</x:String>
+                        <x:String>ETHIOPIA</x:String>
+                        <x:String>FALKLAND ISLANDS</x:String>
+                        <x:String>FAROE ISLANDS</x:String>
+                        <x:String>FIJI</x:String>
+                        <x:String>FINLAND</x:String>
+                        <x:String>FRANCE</x:String>
+                        <x:String>FRENCH   POLYNESIA</x:String>
+                        <x:String>FRENCH GUIANA</x:String>
+                        <x:String>FRENCH SOUTHERN TERRITORIES</x:String>
+                        <x:String>GABON</x:String>
+                        <x:String>GAMBIA</x:String>
+                        <x:String>GEORGIA</x:String>
+                        <x:String>GERMANY</x:String>
+                        <x:String>GHANA</x:String>
+                        <x:String>GIBRALTAR</x:String>
+                        <x:String>GREECE</x:String>
+                        <x:String>GREENLAND</x:String>
+                        <x:String>GRENADA</x:String>
+                        <x:String>GUADELOUPE</x:String>
+                        <x:String>GUAM</x:String>
+                        <x:String>GUATEMALA</x:String>
+                        <x:String>GUINEA</x:String>
+                        <x:String>GUINEA-BISSAU</x:String>
+                        <x:String>GUYANA</x:String>
+                        <x:String>HAITI</x:String>
+                        <x:String>HEARD AND MC DONALD ISLANDS</x:String>
+                        <x:String>HONDURAS</x:String>
+                        <x:String>HONG KONG</x:String>
+                        <x:String>HUNGARY</x:String>
+                        <x:String>ICELAND</x:String>
+                        <x:String>INDIA</x:String>
+                        <x:String>INDONESIA</x:String>
+                        <x:String>IRAQ</x:String>
+                        <x:String>IRELAND</x:String>
+                        <x:String>ISRAEL</x:String>
+                        <x:String>ITALY</x:String>
+                        <x:String>JAMAICA</x:String>
+                        <x:String>JAPAN</x:String>
+                        <x:String>JORDAN</x:String>
+                        <x:String>KAZAKHSTAN</x:String>
+                        <x:String>KENYA</x:String>
+                        <x:String>KIRIBATI</x:String>
+                        <x:String>KOREA, DEMOCRATIC PEOPLES REPUBLIC OF</x:String>
+                        <x:String>KOREA, REPUBLIC   OF</x:String>
+                        <x:String>KUWAIT</x:String>
+                        <x:String>KYRGYZSTAN</x:String>
+                        <x:String>LAO   PEOPLES DEMOCRATIC REPUBLIC</x:String>
+                        <x:String>LATVIA</x:String>
+                        <x:String>LEBANON</x:String>
+                        <x:String>LESOTHO</x:String>
+                        <x:String>LIBERIA</x:String>
+                        <x:String>LIBYAN ARAB JAMAHIRIYA</x:String>
+                        <x:String>LIECHTENSTEIN</x:String>
+                        <x:String>LITHUANIA</x:String>
+                        <x:String>LUXEMBOURG</x:String>
+                        <x:String>MACAU</x:String>
+                        <x:String>MADAGASCAR</x:String>
+                        <x:String>MALAWI</x:String>
+                        <x:String>MALAYSIA</x:String>
+                        <x:String>MALDIVES</x:String>
+                        <x:String>MALI</x:String>
+                        <x:String>MALTA</x:String>
+                        <x:String>MARSHALL ISLANDS</x:String>
+                        <x:String>MARTINIQUE</x:String>
+                        <x:String>MAURITANIA</x:String>
+                        <x:String>MAURITIUS</x:String>
+                        <x:String>MEXICO</x:String>
+                        <x:String>MICRONESIA</x:String>
+                        <x:String>MOLDOVA, REPUBLIC OF</x:String>
+                        <x:String>MONACO</x:String>
+                        <x:String>MONGOLIA</x:String>
+                        <x:String>MONTSERRAT</x:String>
+                        <x:String>MOROCCO</x:String>
+                        <x:String>MOZAMBIQUE</x:String>
+                        <x:String>MYANMAR</x:String>
+                        <x:String>NAMIBIA</x:String>
+                        <x:String>NAURU</x:String>
+                        <x:String>NEPAL</x:String>
+                        <x:String>NETHERLANDS</x:String>
+                        <x:String>NETHERLANDS ANTILLES</x:String>
+                        <x:String>NEUTRAL ZONE</x:String>
+                        <x:String>NEW   ZEALAND</x:String>
+                        <x:String>NEW CALEDONIA</x:String>
+                        <x:String>NICARAGUA</x:String>
+                        <x:String>NIGER</x:String>
+                        <x:String>NIGERIA</x:String>
+                        <x:String>NIUE</x:String>
+                        <x:String>NORFOLK ISLAND</x:String>
+                        <x:String>NORTHERN MARIANA ISLANDS</x:String>
+                        <x:String>NORWAY</x:String>
+                        <x:String>OMAN</x:String>
+                        <x:String>PAKISTAN</x:String>
+                        <x:String>PALAU</x:String>
+                        <x:String>PANAMA</x:String>
+                        <x:String>PAPUA NEW GUINEA</x:String>
+                        <x:String>PARAGUAY</x:String>
+                        <x:String>PERU</x:String>
+                        <x:String>PHILIPPINES</x:String>
+                        <x:String>PITCAIRN</x:String>
+                        <x:String>POLAND</x:String>
+                        <x:String>PORTUGAL</x:String>
+                        <x:String>PUERTO RICO</x:String>
+                        <x:String>QATAR</x:String>
+                        <x:String>REUNION</x:String>
+                        <x:String>ROMANIA</x:String>
+                        <x:String>RUSSIAN FEDERATION</x:String>
+                        <x:String>RWANDA</x:String>
+                        <x:String>SAINT KITTS   AND NEVIS</x:String>
+                        <x:String>SAINT LUCIA</x:String>
+                        <x:String>SAINT VINCENT AND THE   GRENADINES</x:String>
+                        <x:String>SAMOA</x:String>
+                        <x:String>SAN MARINO</x:String>
+                        <x:String>SAO   TOME AND PRINCIPE</x:String>
+                        <x:String>SAUDI ARABIA</x:String>
+                        <x:String>SENEGAL</x:String>
+                        <x:String>SEYCHELLES</x:String>
+                        <x:String>SIERRA LEONE</x:String>
+                        <x:String>SINGAPORE</x:String>
+                        <x:String>SLOVAKIA</x:String>
+                        <x:String>SLOVENIA</x:String>
+                        <x:String>SOLOMON ISLANDS</x:String>
+                        <x:String>SOMALIA</x:String>
+                        <x:String>SOUTH   AFRICA</x:String>
+                        <x:String>SPAIN</x:String>
+                        <x:String>SRI LANKA</x:String>
+                        <x:String>ST.   HELENA</x:String>
+                        <x:String>ST. PIERRE AND MIQUELON</x:String>
+                        <x:String>SUDAN</x:String>
+                        <x:String>SURINAME</x:String>
+                        <x:String>SVALBARD AND JAN MAYEN ISLANDS</x:String>
+                        <x:String>SWAZILAND</x:String>
+                        <x:String>SWEDEN</x:String>
+                        <x:String>SWITZERLAND</x:String>
+                        <x:String>SYRIAN ARAB REPUBLIC</x:String>
+                        <x:String>TAIWAN, REPUBLIC OF CHINA</x:String>
+                        <x:String>TAJIKISTAN</x:String>
+                        <x:String>TANZANIA, UNITED REPUBLIC OF</x:String>
+                        <x:String>THAILAND</x:String>
+                        <x:String>TOGO</x:String>
+                        <x:String>TOKELAU</x:String>
+                        <x:String>TONGA</x:String>
+                        <x:String>TRINIDAD AND TOBAGO</x:String>
+                        <x:String>TUNISIA</x:String>
+                        <x:String>TURKEY</x:String>
+                        <x:String>TURKMENISTAN</x:String>
+                        <x:String>TURKS AND CAICOS ISLANDS</x:String>
+                        <x:String>TUVALU</x:String>
+                        <x:String>UGANDA</x:String>
+                        <x:String>UKRAINE</x:String>
+                        <x:String>UNITED ARAB   EMIRATES</x:String>
+                        <x:String>UNITED KINGDOM</x:String>
+                        <x:String>UNITED STATES</x:String>
+                        <x:String>UNITED STATES MINOR OUTLYING ISLANDS</x:String>
+                        <x:String>URUGUAY</x:String>
+                        <x:String>USSR</x:String>
+                        <x:String>UZBEKISTAN</x:String>
+                        <x:String>VANUATU</x:String>
+                        <x:String>VATICAN CITY STATE</x:String>
+                        <x:String>VENEZUELA</x:String>
+                        <x:String>VIET NAM</x:String>
+                        <x:String>VIRGIN ISLANDS</x:String>
+                        <x:String>WALLIS AND FUTUNA ISLANDS</x:String>
+                        <x:String>WESTERN SAHARA</x:String>
+                        <x:String>YEMEN, REPUBLIC OF</x:String>
+                        <x:String>YUGOSLAVIA</x:String>
+                        <x:String>ZAIRE</x:String>
+                        <x:String>ZAMBIA</x:String>
+                        <x:String>ZIMBABWE</x:String>
+                    </Picker.Items>
+                </Picker>
+                
+                <Button x:Name="btnChangeAddress" Text="Submit" BackgroundColor="#9e1b69" TextColor="White"
+                    HorizontalOptions="FillAndExpand"  Margin="0,15,0,0"  Clicked="OnbtnChangeAddress" />
+
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

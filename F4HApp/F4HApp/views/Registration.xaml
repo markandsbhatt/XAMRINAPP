@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="F4HApp.views.Registration" Title="Registration">
+    <ContentPage.Content>
+        <StackLayout Margin="30,10,30,30" HorizontalOptions="FillAndExpand">
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" >
+                <Image Source="F4HLogo.png"></Image>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" >
+                <Label Text="Registration" TextColor="#9e1b69" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Large"></Label>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Spacing="10" HorizontalOptions="FillAndExpand" >
+
+                <Picker Title="Title" x:Name="ddlTitle" VerticalOptions="CenterAndExpand" TextColor="Black">
+                    <Picker.Items>
+                        <x:String>Mr</x:String>
+                        <x:String>Mrs</x:String>
+                        <x:String>Miss</x:String>
+                    </Picker.Items>
+                </Picker>
+               
+                <Entry x:Name="txtFirstName"  Placeholder="First Name *" Keyboard="Default"
+                       HorizontalOptions="FillAndExpand" Margin="0,1,0,0" />
+
+                <Entry x:Name="txtLastName"  Placeholder="Last Name *" Keyboard="Default"
+                       HorizontalOptions="FillAndExpand" Margin="0,1,0,0" />
+
+                <Entry x:Name="txtMobileNo"   Placeholder="Mobile No *" Keyboard="Numeric"
+                       HorizontalOptions="FillAndExpand" Margin="0,1,0,0" />
+
+                <Entry x:Name="txtEmailID"  Placeholder="Email Address *" Keyboard="Email"
+                       HorizontalOptions="FillAndExpand" Margin="0,1,0,0" />
+
+                <Entry x:Name="txtDOB"  Placeholder="Date Of Birth dd/mm/yyyy *" Keyboard="Default"
+                       HorizontalOptions="FillAndExpand" Margin="0,1,0,0" />
+
+                <Entry x:Name="txtPassword"  Placeholder="Password *" Keyboard="Default" IsPassword="True"
+                       HorizontalOptions="FillAndExpand" Margin="0,1,0,0" />
+                
+                <Button x:Name="btnRegister" Text="Submit" BackgroundColor="#9e1b69" TextColor="White"
+                    HorizontalOptions="FillAndExpand"  Margin="0,1,0,0"  Clicked="OnbtnRegister" />
+
+            </StackLayout>
+            
+
+            <StackLayout Orientation="Horizontal" Spacing="10" HorizontalOptions="FillAndExpand">
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
+
+                    <Label x:Name="lblBackToLogin" Text="Back To Login" TextColor="#9e1b69" FontAttributes="Bold" 
+                           FontSize="Small" HorizontalOptions="EndAndExpand"></Label>
+
+                </StackLayout>
+
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

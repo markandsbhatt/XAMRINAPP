@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+
+  <string name="app_name">ActionBarCustomize</string>
+  <string name="hello_world">Hello world!</string>
+  <string name="menu_settings">Settings</string>
+
+  <drawable name="actionbar_background">#FF0000</drawable>
+  <color name="color_title">#00FF00</color>
+
+</resources>

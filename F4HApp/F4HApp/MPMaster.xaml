@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="F4HApp.MPMaster" BackgroundColor="#42a79f"
+             Title="FOOD4HEALTH" 
+			 Icon="hamburger.png">    
+    <StackLayout BackgroundColor="#e2e2e2">
+    <ListView x:Name="MenuItemsListView"
+              SeparatorVisibility="Default"
+              HasUnevenRows="true"
+              ItemsSource="{Binding MenuItems}">
+      <ListView.Header>
+        <Grid BackgroundColor="#42a79f" HorizontalOptions="FillAndExpand">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+          </Grid.ColumnDefinitions>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="9"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="9"/>
+          </Grid.RowDefinitions>
+          <Label
+              Grid.Column="1"
+              Grid.Row="2"
+              Text="FOOD4HEALTH"
+              Style="{DynamicResource SubtitleStyle}" Margin="20,0,0,0" FontAttributes="Bold" />
+        </Grid>
+      </ListView.Header>
+      <ListView.ItemTemplate>
+        <DataTemplate>
+                    <ViewCell>
+
+                        <StackLayout VerticalOptions="FillAndExpand" Orientation="Vertical" Padding="20,0,0,0">
+                            <StackLayout Orientation="Horizontal" Padding="0,10 ,10,10">
+
+                                <Image Source="{Binding IconSource}" />
+                                <Label Text="{Binding Title}" TextColor="#5A5959" Margin="20,0,0,0"  />
+
+                            </StackLayout>
+                        </StackLayout>
+
+                    </ViewCell>
+         </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+</ContentPage>

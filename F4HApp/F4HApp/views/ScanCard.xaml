@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="F4HApp.views.ScanCard" Title="Earn Points">
+  <ContentPage.Content>
+    <StackLayout HorizontalOptions="FillAndExpand">
+      <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="50" BackgroundColor="#9e1b69">
+        <Label x:Name="lblMemberName" TextColor="#ffffff" HorizontalOptions="Center" FontAttributes="Bold" Margin="0,8,0,0" FontSize="Large"></Label>
+      </StackLayout>
+
+      <StackLayout Margin="10,20,10,10" HorizontalOptions="FillAndExpand">
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand"  Margin="0,0,0,0" >
+          <Label Text="Earn loyalty points instantly"  TextColor="#42a79f"  FontAttributes="Bold" FontSize="Small"></Label>
+        </StackLayout>
+
+        <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand"  Margin="0,0,0,0">
+          <Label IsVisible="False" Text="Mean while to earn point with scratch code just enter you scratch code below and submit."  TextColor="#42a79f"  FontAttributes="Bold" FontSize="Small"></Label>
+
+          <Entry x:Name="txtScratchCode" Placeholder="Scratch Code" Keyboard="Default"
+             HorizontalOptions="FillAndExpand" Margin="0,10,0,0" />
+
+          <Button x:Name="btnSubmit" Text="Submit" BackgroundColor="#9e1b69" TextColor="White"
+              HorizontalOptions="FillAndExpand"  Margin="0,10,0,0"  Clicked="OnbtnSubmit" />
+
+          <Label x:Name="lblAbt" Text="OR" TextColor="#2c9e94" FontAttributes="Bold" FontSize="Small" HorizontalOptions="Center"></Label>
+
+          <Label x:Name="lblAb2t" Text="When scanning, please adjust the red line of the scanner so that it is on top of the barcode/qr code." TextColor="#2c9e94" FontAttributes="Bold" FontSize="Small" HorizontalOptions="StartAndExpand"></Label>
+          <Button
+      Text="Start scan by clicking here. "
+                BackgroundColor="#9e1b69" TextColor="White"
+                HorizontalOptions="FillAndExpand"  Margin="0,10,0,0"
+     Clicked="OnClickScan" />
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand"  Margin="0,0,0,0">
+          <Label x:Name="lblMsg"  TextColor="#9e1b69"  FontAttributes="Bold" FontSize="Small" IsVisible="False"></Label>
+        </StackLayout>
+
+      </StackLayout>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

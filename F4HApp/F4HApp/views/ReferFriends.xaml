@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="F4HApp.views.ReferFriends" Title="Refer Friends">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand">
+            <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="50" BackgroundColor="#9e1b69">
+                <Label Text="Karen Smith" TextColor="#ffffff" HorizontalOptions="Center" FontAttributes="Bold" Margin="0,8,0,0" FontSize="Large"></Label>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

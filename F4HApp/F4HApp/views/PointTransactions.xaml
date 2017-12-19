@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="F4HApp.views.PointTransactions" Title="Transactions">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!-- COLORS -->
+            <Color x:Key="Rgray">#ffffff</Color>
+
+            <!-- ENTRIES -->
+            <Style x:Key="entryCustom"
+                   TargetType="Entry">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="WidthRequest" Value="200" />
+                <Setter Property="HeightRequest" Value="45" />
+                <Setter Property="BackgroundColor" Value="#aeaeae" />
+            </Style>
+            <Style x:Key="entryCustomGray"
+                   TargetType="Entry">
+                <Setter Property="FontSize" Value="Small" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout HorizontalOptions="FillAndExpand">
+                <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="50" BackgroundColor="#9e1b69">
+                    <Label x:Name="lblTitle" Text="Transactions" TextColor="#ffffff" HorizontalOptions="Center" FontAttributes="Bold" Margin="0,8,0,0" FontSize="Large"></Label>
+                </StackLayout>
+
+                <StackLayout Margin="5,10,10,10" HorizontalOptions="FillAndExpand">
+
+                    <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand"  Margin="0,10,0,0">
+                        <Label x:Name="lblEarnPoints" Text="Total Points Earned : 1050"  TextColor="#9e1b69"  FontAttributes="Bold" FontSize="Small"></Label>
+                        <Label x:Name="lblRedeemPoints" Text="Total Points Redeemed : 1050"  TextColor="#9e1b69"  FontAttributes="Bold" FontSize="Small"></Label>
+                        <Label x:Name="lblTransferPoints" Text="Total Points Transferred : 1050"  TextColor="#9e1b69"  FontAttributes="Bold" FontSize="Small"></Label>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"  Margin="0,0,0,0" IsVisible="True">
+                        <Label Text="Mode :"  TextColor="Gray"  FontAttributes="Bold" FontSize="Small" VerticalOptions="Center"></Label>
+                        <Picker Title="Transaction Type" x:Name="ddlTransactionType" SelectedIndexChanged="ddlTransactionType_SelectedIndexChanged">
+                            <Picker.Items>
+                                <x:String>All</x:String>
+                                <x:String>Earned</x:String>
+                                <x:String>Redeemed</x:String>
+                                <x:String>Transfer</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="FillAndExpand" Margin="5,0,10,10" x:Name="All">
+
+                    <BoxView BackgroundColor="#9e1b69" HeightRequest="1" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" />
+
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <StackLayout WidthRequest="100" Orientation="Vertical" Grid.Row="1" Grid.Column="0" Margin="0,0,0,0">
+                            <Label  Text="Date" TextColor="#42a79f" />
+                        </StackLayout>
+                        <StackLayout WidthRequest="100" Orientation="Vertical" Grid.Row="1" Grid.Column="1" Margin="0,0,0,0">
+                            <Label  Text="Mode" TextColor="#42a79f" />
+                        </StackLayout>
+                        <StackLayout WidthRequest="70" Orientation="Vertical" Grid.Row="1" Grid.Column="1" Margin="0,0,0,0">
+                            <Label  HorizontalOptions="Center" Text="Points" TextColor="#42a79f" />
+                        </StackLayout>
+                        <StackLayout WidthRequest="130" Orientation="Vertical" Grid.Row="1" Grid.Column="3" Margin="0,0,0,0">
+                            <Label  HorizontalOptions="Center" Text="Remarks" TextColor="#42a79f" />
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4">
+                        <BoxView BackgroundColor="#9e1b69" HeightRequest="1" />
+                    </StackLayout>
+
+                    <ListView x:Name="LVAll" HasUnevenRows="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="100*" />
+                                            <ColumnDefinition Width="100*" />
+                                            <ColumnDefinition Width="70*" />
+                                            <ColumnDefinition Width="130*" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <StackLayout Orientation="Vertical"  Grid.Column="0" Margin="0,5,0,0">
+                                            <Label  Text="{Binding Date}" />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical"  Grid.Column="1" Margin="0,5,0,0">
+                                            <Label  HorizontalOptions="Center" Text="{Binding Mode}" />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" Grid.Column="2" Margin="0,5,0,0">
+                                            <Label   HorizontalOptions="Center" Text="{Binding Points}" />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" Grid.Column="3" Margin="0,5,0,0">
+                                            <Label  Text="{Binding Remarks}" />
+                                        </StackLayout>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="FillAndExpand" Margin="5,0,10,10" x:Name="Earned" IsVisible="False">
+
+                    <BoxView BackgroundColor="#9e1b69" HeightRequest="1" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" />
+
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <StackLayout WidthRequest="80" Orientation="Vertical" Grid.Row="1" Grid.Column="0" Margin="0,0,0,0">
+                            <Label  Text="Date" TextColor="#42a79f" />
+                        </StackLayout>
+                        <StackLayout WidthRequest="140" Orientation="Vertical" Grid.Row="1" Grid.Column="1" Margin="0,0,0,0">
+                            <Label  Text="Scratch Code" TextColor="#42a79f" />
+                        </StackLayout>
+                        <StackLayout WidthRequest="50" Orientation="Vertical" Grid.Row="1" Grid.Column="2" Margin="0,0,0,0">
+                            <Label  HorizontalOptions="Center" Text="Mode" TextColor="#42a79f" />
+                        </StackLayout>
+                        <StackLayout WidthRequest="70" Orientation="Vertical" Grid.Row="1" Grid.Column="3" Margin="0,0,0,0">
+                            <Label  HorizontalOptions="Center" Text="Points" TextColor="#42a79f" />
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4">
+                        <BoxView BackgroundColor="#9e1b69" HeightRequest="1" />
+                    </StackLayout>
+
+                    <ListView x:Name="LVEarned">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="80*" />
+                                            <ColumnDefinition Width="140*" />
+                                            <ColumnDefinition Width="50*" />
+                                            <ColumnDefinition Width="70*" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <StackLayout Orientation="Vertical"  Grid.Column="0" Margin="0,5,0,0">
+                                            <Label  Text="{Binding Date}" />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" Grid.Column="1" Margin="0,5,0,0">
+                                            <Label  Text="{Binding ScratchCode}" />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical"  Grid.Column="2" Margin="0,5,0,0">
+                                            <Label  HorizontalOptions="Center" Text="{Binding Mode}" />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" Grid.Column="3" Margin="0,5,0,0">
+                                            <Label   HorizontalOptions="Center" Text="{Binding Points}" />
+                                        </StackLayout>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="FillAndExpand" Margin="5,0,10,10" x:Name="Redeemed">
+
+                    <BoxView BackgroundColor="#9e1b69" HeightRequest="1" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" />
+
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <StackLayout WidthRequest="80" Orientation="Vertical" Grid.Row="1" Grid.Column="0" Margin="0,0,0,0">
+                            <Label  Text="Date" TextColor="#42a79f" />
+                        </StackLayout>
+                        <StackLayout WidthRequest="70" Orientation="Vertical" Grid.Row="1" Grid.Column="1" Margin="0,0,0,0">
+                            <Label  Text="Points" TextColor="#42a79f" HorizontalOptions="Center"  />
+                        </StackLayout>
+                        <StackLayout WidthRequest="190" Orientation="Vertical" Grid.Row="1" Grid.Column="2" Margin="0,0,0,0">
+                            <Label  Text="Purchase" TextColor="#42a79f" />
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4">
+                        <BoxView BackgroundColor="#9e1b69" HeightRequest="1" />
+                    </StackLayout>
+
+                    <ListView x:Name="LVRedeem">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="80*" />
+                                            <ColumnDefinition Width="70*" />
+                                            <ColumnDefinition Width="190*" />
+                                        </Grid.ColumnDefinitions>
+
+
+                                        <StackLayout Orientation="Vertical" Grid.Column="0" Margin="0,5,0,0">
+                                            <Label  Text="{Binding Date}" />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" Grid.Column="1" Margin="0,5,0,0">
+                                            <Label  Text="{Binding Points}" HorizontalOptions="Center" />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" Grid.Column="2" Margin="0,5,0,0">
+                                            <Label Text="{Binding Purchase}" />
+                                        </StackLayout>
+
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="FillAndExpand" Margin="5,0,10,10" x:Name="Transferred">
+
+
+                    <BoxView BackgroundColor="#9e1b69" HeightRequest="1" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" />
+
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <StackLayout WidthRequest="100" Orientation="Vertical" Grid.Row="1" Grid.Column="0" Margin="0,0,0,0">
+                            <Label  Text="Date" TextColor="#42a79f" />
+                        </StackLayout>
+                        <StackLayout WidthRequest="190" Orientation="Vertical" Grid.Row="1" Grid.Column="1" Margin="0,0,0,0">
+                            <Label  Text="No of Points" TextColor="#42a79f" HorizontalOptions="Center"  />
+                        </StackLayout>
+                        <StackLayout WidthRequest="220" Orientation="Vertical" Grid.Row="1" Grid.Column="2" Margin="0,0,0,0">
+                            <Label  Text="Transfered To" TextColor="#42a79f" />
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
+                        <BoxView BackgroundColor="#9e1b69" HeightRequest="1" />
+                    </StackLayout>
+
+                    <ListView x:Name="LVTransfer">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="100*" />
+                                            <ColumnDefinition Width="190*" />
+                                            <ColumnDefinition Width="220*" />
+                                        </Grid.ColumnDefinitions>
+
+
+                                        <StackLayout Orientation="Vertical" Grid.Column="0" Margin="0,5,0,0">
+                                            <Label  Text="{Binding Date}" />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" Grid.Column="1" Margin="0,5,0,0">
+                                            <Label  Text="{Binding Points}"   HorizontalOptions="Center" />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" Grid.Column="2" Margin="0,5,0,0">
+                                            <Label Text="{Binding TransferedTo}" />
+                                        </StackLayout>
+
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
